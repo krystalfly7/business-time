@@ -1,0 +1,37 @@
+{
+    "dependencies": {},
+    "asyncDependencies": {},
+    "devDependencies": {},
+    "directories": {},
+    "engines": {},
+    "scripts": {},
+    "name": "wepp-module-event",
+    "description": "Custom Event . Based on Backbone.Event",
+    "version": "0.2.2",
+    "main": "./index.js",
+    "homepage": "",
+    "author": {
+        "name": "mangix",
+        "email": "maqh1988@gmail.com"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git://code.dianpingoa.com/wepp-module/wepp-module-event.git"
+    },
+    "licenses": [
+        {
+            "type": "MIT",
+            "url": "/blob/master/LICENSE-MIT"
+        }
+    ],
+    "keywords": [
+        "Event",
+        "Backbone"
+    ],
+    "gitHead": "2b095f0765e9a2e80075c38014a1eb1943209388",
+    "readme": "# wepp-module-event\n\n> Custom Event . Based on Backbone.Event\n\n## Getting Started\nBefore anything taking its part, you should install [node](http://nodejs.org) and \"cortex\".\n\n#### Install Node\n\nVisit [http://nodejs.org](http://nodejs.org), download and install the proper version of nodejs.\n\n#### Install Cortex\n\n    # maybe you should use `sudo`\n    npm install -g cortex\n\n## Using wepp-module-event In Your Project\n\nFirst, install 'wepp-module-event' directly with `cortex install` (recommended)\n\t\n\tcortex install wepp-module-event --save\n\t\nor, you could update your package.json manually\n    \n    dependencies: {\n        'wepp-module-event': '<version-you-want>'\n    }\n    \nand install dependencies\n\t\n\tcortex install\n    \nThen, use `require` method in your module\n    \n    var wepp-module-event = require('wepp-module-event');\n    \nFinally, start cortex server\n    \n    cortex server\n    \nThen cortex will care all the rest.\n\n\n## API Documentation\n\n### wepp-module-event: constructor\n': constructor' means the `module.exports` of module 'wepp-module-event' is a constructor that we should use it with the `new` keyword\n\n\tnew wepp-module-event(options)\n\t\n#### options\n- options.name {String}\n\n\n\n### wepp-module-event.\\<method-name\\>(arguments)\nMeans this is a static method of `module.exports`\n\n#### arguments\n// arguments description here\n\n### .\\<method-name\\>(arguments)\nMean this is a method of the instance\n\n#### arguments\n// arguments description here",
+    "readmeFilename": "README.md",
+    "_id": "wepp-module-event@0.2.2",
+    "css": [],
+    "entries": []
+}

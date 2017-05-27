@@ -1,0 +1,26 @@
+{
+  "name": "wepp-module-overlay",
+  "description": "The coolest cortex module.",
+  "version": "0.3.3",
+  "main": "./index.js",
+  "keywords": [
+    "mobile",
+    "Overlay"
+  ],
+  "engines": {
+    "neuron": "*"
+  },
+  "devDependencies": {
+    "assert": "*"
+  },
+  "dependencies": {
+    "wepp-module-event": "~0.2.0",
+    "zepto": "^1.2.1"
+  },
+  "gitHead": "2400b51c7672e573f8a4f8d658652154b615907c",
+  "readme": "# wepp-module-overlay\r\n----\r\n创建一个灰色略有透明的覆盖层。较为基础的组件，已被多个组件所依赖。\r\n\r\n## 调用方法\r\n通过加载获得实例原型`Overlay`，通过初始化调用\r\n\r\n\tnew Overlay(zIndex,isSupportClose,opacity)\r\n\r\n返回一个实例对象`overlay`。\r\n\r\n### 参数说明\r\n\r\n* zIndex[`int`|`可选`]:覆盖层的`z-index`值，默认为`200`。\r\n* isSupportClose[`boolean`|`可选`]:再次点击覆盖层是否关闭覆盖层。默认为`false`。\r\n* opacity[`string`|`可选`]:覆盖层的`opacity`值，默认为`0.6`。\r\n\r\n## 方法\r\n\r\n### .show()\r\n显示覆盖层。\r\n### .hide()\r\n隐藏覆盖层。\r\n\r\n## 事件\r\n`overlay`提供了两个实用的事件供开发者灵活调用。\r\n\r\n### .on(\"show\",function(){})\r\n覆盖层被显示出来时触发。\r\n### .on(\"hide\",function(){})\r\n覆盖层被隐藏时触发。",
+  "readmeFilename": "README.md",
+  "_id": "wepp-module-overlay@0.3.3",
+  "css": [],
+  "entries": []
+}

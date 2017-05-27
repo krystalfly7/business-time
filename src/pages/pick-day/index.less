@@ -1,0 +1,28 @@
+ul,
+li {
+  list-style: none;
+}
+ul {
+  background-color: white;
+}
+ul .dayItem {
+  position: relative;
+  margin: 0 15px;
+  line-height: 45px;
+}
+ul .dayItem:not(:last-child) {
+  border-bottom: 1px solid #efeff4;
+}
+ul .dayItem .selected {
+  color: #ff6633;
+}
+ul .dayItem .day-icon{
+  position: absolute;
+  right: 15px;
+  top: 13px;
+  font-size: 12px;
+  background: url(./../../assets/i/shop-pic.png) no-repeat -239px 3px;
+  background-size: auto 128px;
+  width: 18px;
+  height: 16px;
+}

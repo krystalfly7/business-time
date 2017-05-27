@@ -1,0 +1,35 @@
+{
+  "name": "wepp-module-toast",
+  "version": "0.4.2",
+  "description": "The coolest cortex module.",
+  "main": "./index.js",
+  "devDependencies": {
+    "assert": "*"
+  },
+  "dependencies": {
+    "zepto": "^1.2.1",
+    "wepp-module-overlay": "~0.3.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://code.dianpingoa.com/mobile-op/wepp-module-toast.git"
+  },
+  "keywords": [
+    "toast"
+  ],
+  "license": "MIT",
+  "author": {
+    "name": "mangix",
+    "email": "maqh1988@gmail.com"
+  },
+  "bugs": {
+    "url": "http://code.dianpingoa.com/mobile-op/wepp-module-toast/issues"
+  },
+  "homepage": "http://code.dianpingoa.com/mobile-op/wepp-module-toast",
+  "gitHead": "e98fd98e266c015d94fe8fd4c6b30c6d7da38eb4",
+  "readme": "# wepp-module-toast\n---\n简单的提示浮层。\n\n##调用方法\n通过加载获得一个函数`Toast`。使用示例。\n\n\tToast(text,time)\n\t\n###参数说明\n\n* text[`string`|`必选`]:提示文案。\n* time[`int`|`可选`]:提示浮层持续多少毫秒。默认为`2000`。\n* callback[`function`|`可选`]:浮层消失后的回调。\n\n    \n   \n",
+  "readmeFilename": "README.md",
+  "_id": "wepp-module-toast@0.4.2",
+  "css": [],
+  "entries": []
+}

@@ -1,0 +1,28 @@
+{
+  "name": "business-time",
+  "version": "0.1.0",
+  "description": "peon f2e project",
+  "main": "index.js",
+  "directories": {
+    "src": "dist",
+    "html": "html"
+  },
+  "dependencies": {
+    "hippo": "^1.2.15",
+    "wepp-module-toast": "~0.4.2"
+  },
+  "devDependencies": {},
+  "scripts": {},
+  "repository": "",
+  "author": {
+    "name": "krystal",
+    "email": ""
+  },
+  "keywords": [
+    "peon-static"
+  ],
+  "bugs": {
+    "url": "http:///issues"
+  },
+  "homepage": "http://"
+}
