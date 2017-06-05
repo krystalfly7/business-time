@@ -1,5 +1,5 @@
 @base-color: #ff6633;
-
+@border-color: #e4e4e4;
 .business-list {
   display: flex;
   align-content: center;
@@ -9,12 +9,13 @@
   line-height: 34px;
   .list-item {
     flex: 1;
-    border: 1px solid #e4e4e4;
+    border: 1px solid @border-color;
     margin-right: 10px;
   }
   .active {
     border-color: @base-color;
     color: @base-color;
+    background-color: #fff4f1;
   }
 }
 
@@ -28,8 +29,15 @@
 
 .business-panel {
   padding-bottom: 15px;
-  margin-bottom: 10px;
+  border-bottom: 1px solid #efeff4;
+  /*margin-bottom: 10px;*/
   display: block !important;
+}
+
+.del-business {
+  background: #fff;
+  line-height: 45px;
+  text-align: center;
 }
 
 .add-more {

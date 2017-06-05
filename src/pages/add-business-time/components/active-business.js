@@ -18,6 +18,7 @@ class ActiveBusiness extends Component {
             return (
               <FormBusiness
                 key={index}
+                label={'营业时段' + `${index + 1}`}
                 showDelText={index!==0? true: false}
                 businTime={item.businTime}
                 businPeriod={item.businPeriod}
@@ -29,7 +30,7 @@ class ActiveBusiness extends Component {
         }
         <div className="add-time">
           <span onClick={this.props.handleAddFormBusin}>
-              <span className='add-more'></span>添加营业时间
+              <span className='add-more'></span>添加营业时间段
           </span>
         </div>
       </div>
@@ -49,7 +50,7 @@ class ActiveBusiness extends Component {
           label='每周营业日'
           value='周一至周五'
           hasArrow={true}
-          classItem='mb-10'
+          // classItem='mb-10'
           onClickItem={this.props.handleBusnDay} />
         {this.renderFormBusiness()}
       </div>

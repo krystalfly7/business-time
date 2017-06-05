@@ -1,0 +1,56 @@
+@base-color: #ff6633;
+.dialog-modal {
+  position: fixed;
+  z-index: 10000;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  word-wrap: break-word;
+  min-width: 240px;
+  max-width: 280px;
+  font-size: 14px;
+  /* px */
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+  background: #fff;
+  color: #000;
+  text-align: center;
+  vertical-align: middle;
+  word-break: break-all;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.dialog-modal .dialog_content {
+  padding: 20px;
+  border-bottom: solid 1px #efefef;
+  .dialog-header {
+    font-weight: bold;
+    padding-bottom: 10px;
+  }
+  .color-text {
+  	color: @base-color;
+  }
+}
+
+.dialog-modal .dialog_buttons {
+  font-size: 14px;
+  height: 40px;
+  line-height: 40px;
+}
+
+.dialog-modal a {
+  color: #08c;
+  float: left;
+  width: 50%;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+
+.dialog_buttons a.last {
+  border-left: solid 1px #efefef;
+}
+
+.dialog_buttons a.all {
+  width: 100%;
+}

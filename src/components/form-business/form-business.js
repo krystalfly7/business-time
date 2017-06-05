@@ -8,14 +8,33 @@ const businessList2 = ['早午餐','夜宵','下午茶']
 
 class FormBusiness extends Component {
 
+  renderBusinessList = (data) => {
+    return (
+      <div className='business-list'>
+        {
+          data.map((item, index) => {
+            return (
+              <div 
+                key={index}
+                className={this.props.businPeriod === item? 'list-item active' : 'list-item'}
+                onClick={() => this.props.onClickTimePeriod(item)}>
+                {item}
+              </div>
+            )
+          })
+        }
+      </div>
+    )
+  }
+
   render() {
-    const { businTime, businPeriod, showDelText } = this.props;
+    const { label, businTime, businPeriod, showDelText } = this.props;
     return (
         <div>
             <RowItem
-              label='营业时段'
-              value={showDelText? '删除': ''}
-              classItem='border-bm'
+              label={label}
+              // value={showDelText? '删除': ''}
+              classItem='back-color'
               onClickItem={showDelText? this.props.onClickDelForm : null} />
             <RowItem 
               label='营业时间'
@@ -23,42 +42,25 @@ class FormBusiness extends Component {
               hasArrow={true}
               classItem='border-bm'
               onClickItem={this.props.onClickBusinTime} />
-            <FormItem label='时段名称(可选)' classItem='business-panel'>
-              <div className='business-list'>
-                {
-                  businessList1.map((item, index) => {
-                    return (
-                      <div 
-                        key={index}
-                        className={businPeriod === item? 'list-item active' : 'list-item'}
-                        onClick={() => this.props.onClickTimePeriod(item)}>
-                        {item}
-                      </div>
-                    )
-                  })
-                }
-              </div>
-              <div className='business-list'>
-                {
-                  businessList2.map((item, index) => {
-                    return (
-                      <div 
-                        key={index}
-                        className={businPeriod === item? 'list-item active' : 'list-item'}
-                        onClick={() => this.props.onClickTimePeriod(item)}>
-                        {item}
-                      </div>
-                    )
-                  })
-                }
-              </div>
+            <FormItem label='时段名称' subLabel='(可选)' classItem='business-panel'>
+              {this.renderBusinessList(businessList1)}
+              {this.renderBusinessList(businessList2)}
             </FormItem>
+            {
+              showDelText ?
+              <div className='del-business'>
+                <span onClick={this.props.onClickDelForm}>
+                  删除时段
+                </span>
+              </div> : null
+            }
         </div>
     );
   }
 }
 
 FormBusiness.propTypes = {
+  label: PropTypes.string,
   businTime: PropTypes.string,
   businPeriod: PropTypes.string,
   showDelText: PropTypes.bool,

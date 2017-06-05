@@ -40,10 +40,15 @@ a:active {
   border-bottom: 1px solid #efeff4;
 }
 
+.back-color {
+  background-color: #efeff4;
+}
+
 
 /*for add time*/
 
 .add-time {
+  margin-top: 10px;
   background: #fff;
   line-height: 45px;
   text-align: center;
@@ -82,28 +87,31 @@ a:active {
 }
 
 .busin-form:not(:last-child) {
-  border-bottom: 1px solid #e4e4e4;
+  .border-bm;
 }
 
 
 /*for none business time*/
+
 .none-busin {
   background: #fff;
   padding: 10px 15px;
   .busin-label {
     padding-bottom: 10px;
+    .border-bm;
   }
   .busin-content {
     display: flex;
     text-align: center;
+    margin-top: 10px; 
   }
   .content-title {
     flex: 1;
+    color: grey;
+    font-size: 14px;
   }
   .content-day {
-    color: green;
+    color: @base-color;
     flex: 1;
   }
 }
-
-

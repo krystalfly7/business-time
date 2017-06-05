@@ -8,7 +8,7 @@ class FormItem extends React.Component {
             <div className="form-item">
                 <div className={`${this.props.classItem || ''} form-value`}>
                     <label className="form-label">
-                        {this.props.label}
+                        {this.props.label}<span>{this.props.subLabel}</span>
                     </label>
                     {this.props.children}
                 </div>
