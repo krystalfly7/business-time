@@ -11,7 +11,7 @@ class SelectSeason extends Component {
     super(props);
     this.state = {
       defaultStatus: null, //remeber default status for dialog
-      status: 0, // '全年0, 分季节1'
+      status: 0, // 全年0, 分季节1
       showDialog: false,
       season: []
     };
@@ -48,11 +48,15 @@ class SelectSeason extends Component {
       this.setState({ showDialog: true });
     } else {
       console.log('submit season data');
+      //do publish season event, to transfer season and status
+      //or use localstorage
     }
   }
 
   handleOkDialog = () => {
     this.setState({ showDialog: false });
+    //do publish season event, to transfer season and status
+    //or use localstorage
   }
 
   handleCancelDialog = () => {

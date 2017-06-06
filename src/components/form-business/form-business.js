@@ -29,7 +29,7 @@ class FormBusiness extends Component {
   }
 
   render() {
-    const { label, businTime, businPeriod, showDelText } = this.props;
+    const { label, businTime, showDelText } = this.props;
     return (
         <div>
             <RowItem

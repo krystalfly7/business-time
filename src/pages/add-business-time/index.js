@@ -11,12 +11,25 @@ class AddBusinessTime extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      businStatus: 0,
+      businStatus: 0, //business status, 营业时段 0, 非营业时段 1
+      seasonStatus: 0, // season status 全年0, 分季节1, default 0
+      selectedSeason: null,
+      day: '请选择',
       formBusinNum: [{businTime: defaultTime, businPeriod: ''}],
       noneBusinStartDay: null,
       noneBusinEndDay: null,
       noneBusinTime: defaultTime 
     };
+  }
+
+  componentDidMount() {
+    //subsribe dayList event, get dayList string
+    //subsribe season event, get season status and selectedSeason
+    //for test
+    const dayList = '周一,周二,周四,周五,周六,周日';
+    const seasonStatus = 1;
+    const selectedSeason = ['春季', '秋季'];
+    this.setState({ day: dayList, seasonStatus, selectedSeason });
   }
 
   handleChangeBusinStatus = (status) => {
@@ -54,10 +67,12 @@ class AddBusinessTime extends Component {
 
   handleBusinSeason = () => {
     console.log('handleBusinSeason')
+    //open webview select-season page
   }
 
   handleBusinDay = () => {
     console.log('handleBusinDay')
+    //open webview pick-day page
   }
 
   handleNoneBusinStartDay = (day) => {
@@ -72,6 +87,10 @@ class AddBusinessTime extends Component {
     this.setState({ noneBusinTime: time });
   }
 
+  submitBusinTime = () => {
+    // post data to database
+  }
+
   render() {
     return (
       <div className="container">
@@ -83,6 +102,9 @@ class AddBusinessTime extends Component {
             this.state.businStatus === 0 ?
             <ActiveBusiness
               formBusinNum={this.state.formBusinNum}
+              seasonStatus={this.state.seasonStatus}
+              selectedSeason={this.state.selectedSeason}
+              day={this.state.day}
               onBusinSeason={this.handleBusinSeason}
               onBusinDay={this.handleBusinDay}
               delFormBusin={this.handleDelFormBusin}
@@ -98,7 +120,7 @@ class AddBusinessTime extends Component {
                 onBusinTime={this.handleChangeNoneBusinTime} />
           }
         <div className="btnBlock">
-            <a href="javascript:;" className="submitBtn">提交</a>
+            <a href="javascript:;" className="submitBtn" onClick={this.submitBusinTime}>提交</a>
         </div>
       </div>
     </div>

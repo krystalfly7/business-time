@@ -38,20 +38,21 @@ class ActiveBusiness extends Component {
   }
 
   render() {
+    const { seasonStatus, selectedSeason, day, onBusinSeason, onBusinDay } = this.props;
     return (
       <div className="container">
       	<RowItem
           label='每年营业季'
-          value='全年'
+          value={seasonStatus===0? '全年': selectedSeason? selectedSeason.join(';') : ''}
           hasArrow={true}
           classItem='mb-10'
-          onClickItem={this.props.onBusinSeason} />
+          onClickItem={onBusinSeason} />
       	<RowItem
           label='每周营业日'
-          value='周一至周五'
+          value={day}
           hasArrow={true}
           // classItem='mb-10'
-          onClickItem={this.props.onBusinDay} />
+          onClickItem={onBusinDay} />
         {this.renderFormBusiness()}
       </div>
     );
@@ -59,6 +60,9 @@ class ActiveBusiness extends Component {
 }
 
 ActiveBusiness.propTypes = {
+  seasonStatus: PropTypes.number,
+  selectedSeason: PropTypes.array,
+  day: PropTypes.string,
   onBusinDay: PropTypes.func,
   onBusinSeason: PropTypes.func,
   onTimePeriod: PropTypes.func,

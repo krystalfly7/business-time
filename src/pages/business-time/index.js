@@ -34,10 +34,25 @@ const data = [{
 }];
 
 class BusinessTime extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      data: null
+    };
+  }
+
+  componentDidMount () {
+    //get database remote data
+    //for test
+    this.setState({ data });
+  }
+
   render() {
+    const { data } = this.state;
     return (
       <div className="container">
         {
+          data && Array.isArray(data) ?
           data.map((item, index) => {
             return (
               <div className='busin-form' key={index}>
@@ -54,7 +69,7 @@ class BusinessTime extends Component {
                 </div>
               </div>
             )
-          })
+          }) : null
         }
         <div className="btnBlock">
             <a href="javascript:;" className="submitBtn">添加</a>

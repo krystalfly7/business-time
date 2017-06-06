@@ -36,9 +36,14 @@ class BusinDayPicker extends Component {
 
   handleValueChange = (value) => {
     console.log(value)
-    const _colDay = creatNewColDay(colYear[Number(value[0])].label, colMonth[Number(value[1])].label);
-    console.log(_colDay)
-    this.setState({ dayValue: value, colDay: _colDay });
+    //when only change day don't need update colday data,just need update dayValue
+    if(this.state.dayValue[0] === value[0] && this.state.dayValue[1] === value[1]){
+      this.setState({ dayValue: value });
+    } else {
+      const _colDay = creatNewColDay(colYear[Number(value[0])].label, colMonth[Number(value[1])].label);
+      console.log(_colDay)
+      this.setState({ dayValue: value, colDay: _colDay });
+    }
   }
 
   render() {
