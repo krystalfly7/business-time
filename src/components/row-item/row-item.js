@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import FormItem from './../form-item/form-item.js';
+import FormItem from '@components/form-item/form-item.js';
 
 class RowItem extends Component {
 

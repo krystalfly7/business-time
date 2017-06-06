@@ -22,14 +22,14 @@ class ActiveBusiness extends Component {
                 showDelText={index!==0? true: false}
                 businTime={item.businTime}
                 businPeriod={item.businPeriod}
-                onClickDelForm={() => this.props.handleDelFormBusin(index)}
-                onClickBusinTime={() => this.props.handleChangeBusinTime(index)}
-                onClickTimePeriod={(data) => this.props.handleChangeTimePeriod(index, data)} />
+                onClickDelForm={() => this.props.delFormBusin(index)}
+                onClickBusinTime={(time) => this.props.onBusinTime(index, time)}
+                onClickTimePeriod={(data) => this.props.onTimePeriod(index, data)} />
             )
           })
         }
         <div className="add-time">
-          <span onClick={this.props.handleAddFormBusin}>
+          <span onClick={this.props.addFormBusin}>
               <span className='add-more'></span>添加营业时间段
           </span>
         </div>
@@ -45,13 +45,13 @@ class ActiveBusiness extends Component {
           value='全年'
           hasArrow={true}
           classItem='mb-10'
-          onClickItem={this.props.handleBusnSeason} />
+          onClickItem={this.props.onBusinSeason} />
       	<RowItem
           label='每周营业日'
           value='周一至周五'
           hasArrow={true}
           // classItem='mb-10'
-          onClickItem={this.props.handleBusnDay} />
+          onClickItem={this.props.onBusinDay} />
         {this.renderFormBusiness()}
       </div>
     );
@@ -59,12 +59,12 @@ class ActiveBusiness extends Component {
 }
 
 ActiveBusiness.propTypes = {
-  handleBusnDay: PropTypes.func,
-  handleBusnSeason: PropTypes.func,
-  handleChangeTimePeriod: PropTypes.func,
-  handleChangeBusinTime: PropTypes.func,
-  handleDelFormBusin: PropTypes.func,
-  handleAddFormBusin: PropTypes.func
+  onBusinDay: PropTypes.func,
+  onBusinSeason: PropTypes.func,
+  onTimePeriod: PropTypes.func,
+  onBusinTime: PropTypes.func,
+  delFormBusin: PropTypes.func,
+  addFormBusin: PropTypes.func
 }
 export default ActiveBusiness;
 

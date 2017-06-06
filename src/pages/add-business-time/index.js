@@ -1,32 +1,34 @@
 import ReactDom from 'react-dom';
 import React, { Component } from 'react';
 import RadioItem from '@components/radio-item/radio-item.js';
-import DatePicker from '@components/date-picker/date-picker.js';
 import NoneBusiness from './components/none-business.js';
 import ActiveBusiness from './components/active-business.js';
 import '@styles/button.less';
 import '@styles/init.less';
 
-
+const defaultTime = '08:00-18:00';
 class AddBusinessTime extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      visible: false,
-      dpValue: null,
       businStatus: 0,
-      formBusinNum: [{businTime: '08:00-18:00', businPeriod: ''}]
+      formBusinNum: [{businTime: defaultTime, businPeriod: ''}],
+      noneBusinStartDay: null,
+      noneBusinEndDay: null,
+      noneBusinTime: defaultTime 
     };
   }
 
-  onChangeBusinStatus = (status) => {
-    console.log('onChangeBusinStatus')
+  handleChangeBusinStatus = (status) => {
+    console.log('handleChangeBusinStatus')
     this.setState({ businStatus: status });
   }
 
-  handleChangeBusinTime = () => {
-    console.log('handleChangeBusinTime')
-    this.setState({ visible: true })
+  handleChangeBusinTime = (index, time) => {
+    console.log('handleChangeBusinTime');
+    console.log(time);
+    this.state.formBusinNum[index].businTime = time;
+    this.setState({ formBusinNum: this.state.formBusinNum });
   }
 
   handleChangeTimePeriod = (index, data) => {
@@ -39,7 +41,7 @@ class AddBusinessTime extends Component {
   handleAddFormBusin = () => {
     console.log('handleAddFormBusin')
     const { formBusinNum } = this.state;
-    formBusinNum.push({businTime: '08:00-18:00', businPeriod: ''});
+    formBusinNum.push({businTime: defaultTime, businPeriod: ''});
     this.setState({ formBusinNum });
   }
 
@@ -50,26 +52,24 @@ class AddBusinessTime extends Component {
     this.setState({ formBusinNum });
   }
 
-  handleBusnSeason = () => {
-    console.log('handleBusnSeason')
+  handleBusinSeason = () => {
+    console.log('handleBusinSeason')
   }
 
-  handleBusnDay = () => {
-    console.log('handleBusnDay')
+  handleBusinDay = () => {
+    console.log('handleBusinDay')
   }
 
-  // use rmc-date-picker
-  renderDatePicker = () => {
-    return (
-      <DatePicker
-        visible={this.state.visible}
-        mode="time"
-        onOk={() => console.log('onOk')}
-        onDismiss={() => console.log('onDismiss')}
-        value={this.state.dpValue}
-        onChange={v => this.setState({ dpValue: v, visible: false })}
-      />
-    )
+  handleNoneBusinStartDay = (day) => {
+    this.setState({ noneBusinStartDay: day });
+  }
+
+  handleNoneBusinEndDay = (day) => {
+    this.setState({ noneBusinEndDay: day });
+  }
+
+  handleChangeNoneBusinTime = (time) => {
+    this.setState({ noneBusinTime: time });
   }
 
   render() {
@@ -78,20 +78,25 @@ class AddBusinessTime extends Component {
         <div className="content">
           <RadioItem 
             value={this.state.businStatus}
-            onChange={this.onChangeBusinStatus} />
+            onChange={this.handleChangeBusinStatus} />
           {
             this.state.businStatus === 0 ?
             <ActiveBusiness
               formBusinNum={this.state.formBusinNum}
-              handleBusnSeason={this.handleBusnSeason}
-              handleBusnDay={this.handleBusnDay}
-              handleDelFormBusin={this.handleDelFormBusin}
-              handleChangeBusinTime={this.handleChangeBusinTime}
-              handleChangeTimePeriod={this.handleChangeTimePeriod}
-              handleAddFormBusin={this.handleAddFormBusin} />
-            : <NoneBusiness />
+              onBusinSeason={this.handleBusinSeason}
+              onBusinDay={this.handleBusinDay}
+              delFormBusin={this.handleDelFormBusin}
+              onBusinTime={this.handleChangeBusinTime}
+              onTimePeriod={this.handleChangeTimePeriod}
+              addFormBusin={this.handleAddFormBusin} />
+            : <NoneBusiness
+                startDay={this.state.noneBusinStartDay}
+                endDay={this.state.noneBusinEndDay}
+                businTime={this.state.noneBusinTime}
+                onBusinStartDay={this.handleNoneBusinStartDay}
+                onBusinEndDay={this.handleNoneBusinEndDay}
+                onBusinTime={this.handleChangeNoneBusinTime} />
           }
-          {this.renderDatePicker()}
         <div className="btnBlock">
             <a href="javascript:;" className="submitBtn">提交</a>
         </div>

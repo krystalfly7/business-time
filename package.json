@@ -14,13 +14,12 @@
     "peon-static"
   ],
   "dependencies": {
-    "moment": "^2.18.1",
     "prop-types": "^15.5.10",
     "react": "^15.0.2",
     "react-dom": "^15.0.2",
     "reqwest": "^2.0.5",
     "rlu": "^1.0.3",
-    "rmc-date-picker": "^5.4.0"
+    "rmc-picker": "^3.10.1"
   },
   "devDependencies": {
     "autoprefixer": "^6.3.3",

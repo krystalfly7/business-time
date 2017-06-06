@@ -1,13 +1,15 @@
 import ReactDom from 'react-dom';
 import React, { Component } from 'react';
-import RowItem from	'@components/row-item/row-item.js';
+import PropTypes from 'prop-types';
+import BusinTimePicker from '@components/date-picker/busin-timepicker.js';
+import BusinDayPicker from '@components/date-picker/busin-daypicker.js';
 import '@styles/init.less';
 
 
 class NoneBusiness extends Component {
 
   render() {
-    const { startDay, endDay } = this.props;
+    const { startDay, endDay, businTime } = this.props;
     return (
       <div className="container">
         <div className='mb-10 none-busin'>
@@ -19,19 +21,32 @@ class NoneBusiness extends Component {
             <div className='content-title'>结束日期</div>
           </div>
           <div className='busin-content'>
-            <div className='content-day'>请选择</div>
-            <div className='content-day'>请选择</div>
+            <BusinDayPicker
+              value={startDay}
+              onClickItem={this.props.onBusinStartDay} />
+            <BusinDayPicker
+              value={endDay}
+              onClickItem={this.props.onBusinEndDay} />
           </div>
         </div>
-      	<RowItem
+      	<BusinTimePicker
           label='非营业时间'
-          value='08:00-18:00'
+          value={businTime}
           hasArrow={true}
           classItem='mb-10'
-          onClickItem={this.handleBusnDay} />
+          onClickItem={this.props.onBusinTime} />
     </div>
     );
   }
+}
+
+NoneBusiness.propTypes = {
+  startDay: PropTypes.string,
+  endDay: PropTypes.string,
+  businTime: PropTypes.string,
+  onBusinStartDay: PropTypes.func,
+  onBusinEndDay: PropTypes.func,
+  onBusinTime: PropTypes.func
 }
 
 export default NoneBusiness;
