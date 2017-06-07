@@ -3,7 +3,8 @@
  */
 import React from 'react';
 import ReactDom from 'react-dom';
-import Test from './index.jsx';
+// import Test from './index.jsx';
+import Test from './test-action.js';
 var _ins;
 class BootLoader  {
     constructor (props) {
