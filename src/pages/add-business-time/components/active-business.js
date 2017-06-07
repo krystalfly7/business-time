@@ -2,6 +2,7 @@ import ReactDom from 'react-dom';
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import RowItem from	'@components/row-item/row-item.js';
+import { Link } from 'react-router-dom';
 import RadioItem from	'@components/radio-item/radio-item.js';
 import FormBusiness from '@components/form-business/form-business.js';
 import '@styles/button.less';
@@ -43,16 +44,16 @@ class ActiveBusiness extends Component {
       <div className="container">
       	<RowItem
           label='每年营业季'
-          value={seasonStatus===0? '全年': selectedSeason? selectedSeason.join(';') : ''}
+          // value={seasonStatus===0? '全年': selectedSeason? selectedSeason.join(';') : ''}
           hasArrow={true}
           classItem='mb-10'
-          onClickItem={onBusinSeason} />
-      	<RowItem
-          label='每周营业日'
-          value={day}
-          hasArrow={true}
-          // classItem='mb-10'
-          onClickItem={onBusinDay} />
+          // onClickItem={onBusinSeason}
+          >
+          <Link to="/season" className="form-content">{seasonStatus===0? '全年': selectedSeason? selectedSeason.join(';') : ''}</Link>
+        </RowItem>
+      	<RowItem label='每周营业日' hasArrow={true}>
+          <Link to="/pickday" className="form-content">{day}</Link>
+        </RowItem>
         {this.renderFormBusiness()}
       </div>
     );
@@ -63,8 +64,8 @@ ActiveBusiness.propTypes = {
   seasonStatus: PropTypes.number,
   selectedSeason: PropTypes.array,
   day: PropTypes.string,
-  onBusinDay: PropTypes.func,
-  onBusinSeason: PropTypes.func,
+  // onBusinDay: PropTypes.func,
+  // onBusinSeason: PropTypes.func,
   onTimePeriod: PropTypes.func,
   onBusinTime: PropTypes.func,
   delFormBusin: PropTypes.func,

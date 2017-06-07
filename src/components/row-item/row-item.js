@@ -12,6 +12,7 @@ class RowItem extends Component {
             <div className="form-content">
                 {value}
             </div>
+            {this.props.children}
             <div className={hasArrow? "arrow-right" : ''}>
             </div>
           </div>

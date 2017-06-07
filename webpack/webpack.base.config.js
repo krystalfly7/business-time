@@ -21,10 +21,11 @@ module.exports = {
 
         //pages
         "reminder-add-time": ['./src/pages/reminder-add-time/index.js'],
-        "add-business-time": ['./src/pages/add-business-time/index.js'],
-        "pick-day": ['./src/pages/pick-day/index.js'],
+        // "add-business-time": ['./src/pages/add-business-time/index.js'],
+        // "pick-day": ['./src/pages/pick-day/index.js'],
         "business-time": ['./src/pages/business-time/index.js'],
-        'select-season': ['./src/pages/select-season/index.js']
+        'select-season': ['./src/pages/select-season/index.js'],
+        'main': ['./src/pages/router/index.js']
     },
     output: {
         filename: '[name].js',

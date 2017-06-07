@@ -47,4 +47,5 @@ class PickDay extends Component {
   }
 }
 
-ReactDom.render(<PickDay />, document.getElementById('app'));
+export default PickDay;
+// ReactDom.render(<PickDay />, document.getElementById('app'));

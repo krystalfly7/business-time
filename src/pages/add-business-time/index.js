@@ -128,5 +128,6 @@ class AddBusinessTime extends Component {
   }
 }
 
-ReactDom.render(<AddBusinessTime />, document.getElementById('app'));
+export default AddBusinessTime;
+// ReactDom.render(<AddBusinessTime />, document.getElementById('app'));
 

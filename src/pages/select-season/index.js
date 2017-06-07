@@ -129,5 +129,6 @@ class SelectSeason extends Component {
   }
 }
 
-ReactDom.render(<SelectSeason />, document.getElementById('app'));
+export default SelectSeason;
+// ReactDom.render(<SelectSeason />, document.getElementById('app'));
 
