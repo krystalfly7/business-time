@@ -27,7 +27,7 @@ class PickDay extends Component {
   render() {
     const { dayList } = this.state;
     return (
-      <div className="container">
+      <div className="container pick-day">
         <ul>
           {
         	  weekData.map((item, index) => {

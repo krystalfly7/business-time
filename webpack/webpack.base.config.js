@@ -20,11 +20,11 @@ module.exports = {
         "common": ['@cortex/hippo', '@cortex/wepp-module-toast', 'react', 'react-dom'],//将经常用的库js包打到commons.js中,此js中的内容不会经常变动
 
         //pages
-        "reminder-add-time": ['./src/pages/reminder-add-time/index.js'],
+        // "reminder-add-time": ['./src/pages/reminder-add-time/index.js'],
         // "add-business-time": ['./src/pages/add-business-time/index.js'],
         // "pick-day": ['./src/pages/pick-day/index.js'],
         "business-time": ['./src/pages/business-time/index.js'],
-        'select-season': ['./src/pages/select-season/index.js'],
+        // 'select-season': ['./src/pages/select-season/index.js'],
         'main': ['./src/pages/router/index.js']
     },
     output: {

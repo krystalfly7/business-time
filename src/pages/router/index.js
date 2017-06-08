@@ -1,10 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { HashRouter, BrowserRouter, Route, Link, Switch, IndexRoute, Router } from 'react-router-dom';
+import { HashRouter, BrowserRouter, Route, Switch } from 'react-router-dom';
 import AddBusinessTime from './../add-business-time/index.js';
 import PickDay from './../pick-day/index.js';
 import SelectSeason from './../select-season/index.js';
+import ReminderAddTime from './../reminder-add-time/container/reminder-add-time.js';
+import BusinessTime from './../business-time/index.js';
 
+// hash router
 // ReactDOM.render((
 //    <HashRouter>
 //       <div>
@@ -23,24 +26,31 @@ function getBaseUrl() {
 let basePath = getBaseUrl();
 
 
-// ReactDOM.render((
-//    <BrowserRouter basename={basePath}>
-//       <div>
-//         <Route path='/' component={AddBusinessTime} />
-//         <Route path='/pickday' component={PickDay} />
-//       </div>
-//    </BrowserRouter>
-// ), document.getElementById( 'app' ) )
-
+// remote service, BrowserRouter
 ReactDOM.render((
     <BrowserRouter basename={basePath}>
-        <Switch>         
-            <Route path="/pickday" component={PickDay}/>
-            <Route path="/season" component={SelectSeason}/>
-            <Route path="/" component={AddBusinessTime}/>
+        <Switch>
+            <Route exact path="/" component={ReminderAddTime}/>
+            <Route exact path="/add" component={AddBusinessTime}/>
+            <Route path="/add/pickday" component={PickDay}/>
+            <Route path="/add/season" component={SelectSeason}/>
+            <Route path="/business-time" component={BusinessTime}/>
         </Switch>
     </BrowserRouter>
 ), document.getElementById( 'app' ) )
+
+// local test BrowserRouter
+// ReactDOM.render((
+//     <BrowserRouter basename={'/main.html'}>
+//         <Switch>
+//             <Route exact path="/" component={ReminderAddTime}/>
+//             <Route exact path="/add" component={AddBusinessTime}/>
+//             <Route path="/add/pickday" component={PickDay}/>
+//             <Route path="/add/season" component={SelectSeason}/>
+//             <Route path="/business-time" component={BusinessTime}/>
+//         </Switch>
+//     </BrowserRouter>
+// ), document.getElementById( 'app' ) )
 
 
 

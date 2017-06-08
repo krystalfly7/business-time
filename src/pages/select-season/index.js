@@ -106,7 +106,7 @@ class SelectSeason extends Component {
   render() {
     const { status } = this.state;
     return (
-      <div className="container">
+      <div className="container select-season">
         <ul>
           <li className='border-bm'>
             <i className={"checkbox "+(status==0?"checked":"")}

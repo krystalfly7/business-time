@@ -1,5 +1,6 @@
 import ReactDom from 'react-dom';
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import FormItem from	'@components/form-item/form-item.js';
 import '@styles/init.less';
 import '@styles/button.less';
@@ -72,11 +73,13 @@ class BusinessTime extends Component {
           }) : null
         }
         <div className="btnBlock">
-            <a href="javascript:;" className="submitBtn">添加</a>
+            <Link to="/add" className="submitBtn">添加</Link>
         </div>
       </div>
     );
   }
 }
 
-ReactDom.render(<BusinessTime />, document.getElementById('app'));
+export default BusinessTime;
+
+// ReactDom.render(<BusinessTime />, document.getElementById('app'));

@@ -65,15 +65,15 @@ class AddBusinessTime extends Component {
     this.setState({ formBusinNum });
   }
 
-  handleBusinSeason = () => {
-    console.log('handleBusinSeason')
-    //open webview select-season page
-  }
+  // handleBusinSeason = () => {
+  //   console.log('handleBusinSeason')
+  //   //open webview select-season page
+  // }
 
-  handleBusinDay = () => {
-    console.log('handleBusinDay')
-    //open webview pick-day page
-  }
+  // handleBusinDay = () => {
+  //   console.log('handleBusinDay')
+  //   //open webview pick-day page
+  // }
 
   handleNoneBusinStartDay = (day) => {
     this.setState({ noneBusinStartDay: day });
@@ -89,6 +89,7 @@ class AddBusinessTime extends Component {
 
   submitBusinTime = () => {
     // post data to database
+    this.props.history.push('/business-time');
   }
 
   render() {
@@ -105,8 +106,8 @@ class AddBusinessTime extends Component {
               seasonStatus={this.state.seasonStatus}
               selectedSeason={this.state.selectedSeason}
               day={this.state.day}
-              onBusinSeason={this.handleBusinSeason}
-              onBusinDay={this.handleBusinDay}
+              // onBusinSeason={this.handleBusinSeason}
+              // onBusinDay={this.handleBusinDay}
               delFormBusin={this.handleDelFormBusin}
               onBusinTime={this.handleChangeBusinTime}
               onTimePeriod={this.handleChangeTimePeriod}

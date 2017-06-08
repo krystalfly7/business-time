@@ -39,7 +39,7 @@ class ActiveBusiness extends Component {
   }
 
   render() {
-    const { seasonStatus, selectedSeason, day, onBusinSeason, onBusinDay } = this.props;
+    const { seasonStatus, selectedSeason, day } = this.props;
     return (
       <div className="container">
       	<RowItem
@@ -49,10 +49,14 @@ class ActiveBusiness extends Component {
           classItem='mb-10'
           // onClickItem={onBusinSeason}
           >
-          <Link to="/season" className="form-content">{seasonStatus===0? '全年': selectedSeason? selectedSeason.join(';') : ''}</Link>
+          <Link
+            to="/add/season"
+            className="form-content">
+            {seasonStatus===0? '全年': selectedSeason? selectedSeason.join(';') : ''}
+          </Link>
         </RowItem>
       	<RowItem label='每周营业日' hasArrow={true}>
-          <Link to="/pickday" className="form-content">{day}</Link>
+          <Link to="/add/pickday" className="form-content">{day}</Link>
         </RowItem>
         {this.renderFormBusiness()}
       </div>
